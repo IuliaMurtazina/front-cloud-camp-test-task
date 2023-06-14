@@ -1,0 +1,9 @@
+@import '../../../styles/variables.scss';
+
+.counter {
+  position: absolute;
+  bottom: -2.3rem;
+  right: 0;
+  font-size: 1.2rem;
+  color: $black-alpha-48;
+}

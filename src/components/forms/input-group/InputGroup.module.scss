@@ -1,0 +1,44 @@
+@import '../../../styles/variables.scss';
+
+.input-group {
+  @include flex-vert;
+  max-width: 40rem;
+  position: relative;
+  gap: 0.8rem;
+
+  &__full {
+    max-width: 100%;
+  }
+}
+
+.error-text {
+  font-size: 1.2rem;
+  color: $black-alpha-48;
+}
+
+.tip {
+  font-size: 1.2rem;
+  opacity: 0;
+}
+
+.add {
+  width: 2rem;
+  height: 2rem;
+  fill: currentColor;
+}
+
+.input-container {
+  @include flex-center;
+  position: relative;
+}
+
+.btn-add {
+  align-self: start;
+}
+
+.btn-delete {
+  svg {
+    height: 2rem;
+    width: 2rem;
+  }
+}

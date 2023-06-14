@@ -1,0 +1,35 @@
+$bg-layout-light-grey: #F4F4F5;
+
+$color-icon-grey: #cccccc;
+
+$color-grey-dark: #A6A6A6;
+
+$color-primary: #5558FA;
+$color-primary-dark: #3336e8;
+$color-primary-light: #7072f3;
+
+$black-alpha-4: rgba(0, 0, 0, 0.04);
+$black-alpha-8: rgba(0, 0, 0, 0.08);
+$black-alpha-12: rgba(0, 0, 0, 0.12);
+$black-alpha-16: rgba(0, 0, 0, 0.16);
+$black-alpha-24: rgba(0, 0, 0, 0.24);
+$black-alpha-48: rgba(0, 0, 0, 0.48);
+
+$gap: 2.4rem;
+
+// MIXINS 
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-vert {
+  display: flex;
+  flex-direction: column;
+}
+
+// BREAKPOINTS
+
+$tablet: 768px;
+$phone: 425px;

@@ -1,0 +1,36 @@
+@import '../../styles/variables.scss';
+
+.container {
+  background-color: #fff;
+  border-radius: 24px;
+  width: 66vw;
+  min-height: 74vh;
+  margin: 2.4rem auto 0 auto;
+  padding: 6.6rem 12.2% 8rem;
+
+  @media screen and (max-width: $tablet) {
+    height: 100%;
+    min-height: 100vh;
+    width: 100vw;
+    margin-top: 0;
+    border-radius: 0;
+  }
+
+  @media screen and (max-width: $phone) {
+    padding: $gap 1rem;
+  }
+
+  &__main {
+    padding: $gap;
+    border-radius: 1.2rem 1.2rem 0px 0px;
+  }
+}
+
+.not-found {
+  @include flex-vert;
+  gap: $gap;
+
+  p {
+    text-align: center;
+  }
+}

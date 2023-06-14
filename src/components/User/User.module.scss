@@ -1,0 +1,38 @@
+@import '../../styles/variables.scss';
+
+.user {
+  @include flex-center;
+  gap: $gap;
+  padding-bottom: $gap;
+  border-bottom: 1px solid $black-alpha-8;
+
+  @media screen and (max-width: $phone) {
+    flex-direction: column;
+  }
+}
+
+.logo {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.info {
+  @include flex-vert;
+  gap: 0.8rem;
+
+  @media screen and (max-width: $phone) {
+    text-align: center;
+  }
+
+  p {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+}
+
+.links {
+  @include flex-center;
+  gap: 1.6rem;
+}

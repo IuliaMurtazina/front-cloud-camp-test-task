@@ -1,0 +1,39 @@
+@import '../../../../../styles/variables.scss';
+
+.select {
+  position: relative;
+  width: 100%;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  input {
+    cursor: pointer;
+  }
+}
+
+.list {
+  padding: .4rem 0;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  background: #fff;
+
+  li {
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $black-alpha-8;
+    }
+  }
+}

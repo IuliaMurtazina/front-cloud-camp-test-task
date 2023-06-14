@@ -1,0 +1,25 @@
+@import '../../../styles/variables.scss';
+
+.link {
+  @include flex-center;
+  gap: 0.6rem;
+  color: $color-primary;
+  transition: all .3s ease-out;
+
+  &:hover {
+    color: $color-primary-light;
+  }
+
+  &:focus {
+    color: $color-primary-dark;
+  }
+
+  svg {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+
+  span {
+    font-size: 1.2rem;
+  }
+}

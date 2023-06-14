@@ -1,0 +1,6 @@
+@import '../../../styles/variables.scss';
+
+.actions {
+  @include flex-center;
+  justify-content: space-between;
+}

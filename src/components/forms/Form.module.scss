@@ -1,0 +1,17 @@
+@import '../../styles/variables.scss';
+
+.form {
+  @include flex-vert;
+  gap: $gap;
+
+  button {
+    &[data-action=true] {
+      align-self: flex-start;
+      margin-top: $gap;
+    }
+  }
+}
+
+.form-start {
+  padding-top: $gap;
+}
