@@ -15,7 +15,11 @@ const User = () => {
   return (
     <>
       <div className={classes.user}>
-        <img src="/img/user-logo.jpg" alt="Ava" className={classes.logo}></img>
+        <img
+          src={`${process.env.PUBLIC_URL}/img/user-logo.jpg`}
+          alt="Ava"
+          className={classes.logo}
+        ></img>
         <div className={classes.info}>
           <p>Юлия Муртазина</p>
           <div className={classes.links}>

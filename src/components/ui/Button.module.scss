@@ -3,20 +3,17 @@
 .btn {
   padding: 1.2rem 1.6rem;
   border-radius: 4px;
-  border: 1px solid $color-primary;
-  outline: 1px solid rgba($color-primary, 0.5);
+  border: 2px solid $color-primary;
   cursor: pointer;
   transition: all .3s ease-out;
   font-family: "SB Sans Interface", sans-serif;
 
   &:hover {
-    border: 1px solid $color-primary-light;
-    outline: 1px solid rgba($color-primary-light, 0.5);
+    border: 2px solid $color-primary-light;
   }
 
   &:focus {
-    border: 1px solid $color-primary-dark;
-    outline: 1px solid rgba($color-primary-dark, 0.5);
+    border: 2px solid $color-primary-dark;
   }
 
   &__contained {
