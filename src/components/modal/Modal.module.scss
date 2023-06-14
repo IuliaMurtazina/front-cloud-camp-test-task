@@ -1,0 +1,39 @@
+@import '../../styles/variables.scss';
+
+.modal {
+  position: fixed;
+  width: 46rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 3.2rem;
+  border-radius: 1.2rem;
+  @include flex-center;
+  justify-content: center;
+
+  @media screen and (max-width: $tablet) {
+    height: 100%;
+    padding: 1rem;
+    border-radius: 0;
+  }
+
+  &__content {
+    @include flex-vert;
+    align-items: center;
+    gap: $gap;
+  }
+
+  img {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  ;
+  font-weight: 600;
+}

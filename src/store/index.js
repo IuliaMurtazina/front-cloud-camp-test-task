@@ -4,11 +4,15 @@ import { configureStore } from "@reduxjs/toolkit";
 import userReducer, {
   reducerPrefix as USERS_REDUCER_PREFIX,
 } from "./reducers/user";
+import uiReducer, { reducerPrefix as UI_REDUCER_PREFIX } from "./reducers/ui";
 
 const sagaMiddleware = createSagaMiddleware();
 
 const store = configureStore({
-  reducer: { [USERS_REDUCER_PREFIX]: userReducer },
+  reducer: {
+    [USERS_REDUCER_PREFIX]: userReducer,
+    [UI_REDUCER_PREFIX]: uiReducer,
+  },
   middleware: (getDefaultMiddleware) => [
     ...getDefaultMiddleware(),
     sagaMiddleware,

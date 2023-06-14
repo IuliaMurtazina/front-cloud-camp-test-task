@@ -6,7 +6,7 @@ const HomePage = () => {
   return (
     <>
       <User />
-      <FormStart/>
+      <FormStart />
     </>
   );
 };

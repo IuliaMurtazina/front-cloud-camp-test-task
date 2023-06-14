@@ -14,11 +14,12 @@ import { useSelector } from "react-redux";
 import useSubmitForm from "../../hooks/useSubmitForm";
 
 const FormStepOne = () => {
-  const submitFormHandler = useSubmitForm("/create/step/2");
-
   const { nickname, name, sername, sex } = useSelector(
     (state) => state.user.userInfo,
   );
+
+  const { currentStep } = useSelector((state) => state.ui);
+  const submitFormHandler = useSubmitForm();
 
   const initialValues = {
     nickname: nickname ? nickname : "",
@@ -64,17 +65,15 @@ const FormStepOne = () => {
       validateOnMount={true}
       initialValues={initialValues}
       validationSchema={YupFormStepOneValidation}
-      onSubmit={(values) => submitFormHandler(values)}
+      onSubmit={(values) => submitFormHandler(values, currentStep + 1)}
     >
       {(formikProps) => {
         return (
-          <Form
-            className={`${classes.form} ${classes["form-start"]}`}
-          >
+          <Form className={`${classes.form} ${classes["form-start"]}`}>
             {formFields.map((field) => (
               <InputGroup key={field.id} {...field} />
             ))}
-            <ButtonsActions buttonText='Далее' />
+            <ButtonsActions buttonText="Далее" />
           </Form>
         );
       }}

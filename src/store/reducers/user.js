@@ -1,4 +1,4 @@
-import { createAction, createSlice, current } from "@reduxjs/toolkit";
+import { createAction, createSlice } from "@reduxjs/toolkit";
 
 export const reducerPrefix = "user";
 
@@ -8,7 +8,7 @@ export const sendUserInfo = createAction(`${reducerPrefix}/SEND_USER_INFO`);
 
 // REDUCER
 
-export const loadUsersStatus = {
+export const sendUserInfoStatus = {
   LOADING: "loading",
   SUCCESS: "success",
   ERROR: "error",
@@ -16,6 +16,8 @@ export const loadUsersStatus = {
 
 const initialState = {
   userInfo: {},
+  status: "",
+  responce: "",
 };
 
 const userSlice = createSlice({
@@ -27,10 +29,33 @@ const userSlice = createSlice({
         ...state.userInfo,
         ...action.payload,
       };
-      console.log(current(state));
+    },
+    SEND_USER_INFO_LOADING: (state) => {
+      state.status = sendUserInfoStatus.LOADING;
+    },
+    SEND_USER_INFO_SUCCESS: (state, action) => {
+      state.status = sendUserInfoStatus.SUCCESS;
+      state.responce = action.payload;
+    },
+    SEND_USER_INFO_ERROR: (state, action) => {
+      state.status = sendUserInfoStatus.ERROR;
+      state.responce = action.payload;
+    },
+    CLEAR_USER_INFO: () => {
+      return initialState;
     },
   },
 });
 
-export const { ADD_USER_INFO } = userSlice.actions;
+export const {
+  ADD_USER_INFO,
+  SEND_USER_INFO_LOADING,
+  SEND_USER_INFO_SUCCESS,
+  SEND_USER_INFO_ERROR,
+  CLEAR_USER_INFO,
+} = userSlice.actions;
 export default userSlice.reducer;
+
+// SELECTORS
+
+export const selectUserInfo = (state) => state.user.userInfo;

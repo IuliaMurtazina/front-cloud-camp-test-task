@@ -18,7 +18,7 @@ const App = () => {
           element: <HomePage />,
         },
         {
-          path: "create/step/:stepId",
+          path: "create",
           element: <Create />,
         },
         {

@@ -9,11 +9,15 @@
   font-family: "SB Sans Interface", sans-serif;
 
   &:hover {
-    border: 2px solid $color-primary-light;
+    border-color: $color-primary-light;
   }
 
   &:focus {
-    border: 2px solid $color-primary-dark;
+    border-color: $color-primary-dark;
+  }
+
+  &:disabled {
+    border-color: $color-grey-dark;
   }
 
   &__contained {
@@ -26,6 +30,10 @@
 
     &:focus {
       background-color: $color-primary-dark;
+    }
+
+    &:disabled {
+      background-color: $color-grey-dark;
     }
   }
 
@@ -47,6 +55,10 @@
 
     &:focus {
       color: $color-primary-dark;
+    }
+
+    &:disabled {
+      color: $color-grey-dark;
     }
   }
 

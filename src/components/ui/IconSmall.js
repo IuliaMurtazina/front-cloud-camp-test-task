@@ -7,7 +7,7 @@ const IconSmall = ({ iconId, onClick, className }) => {
       className={`${classes.icon} ${className ? className : ""}`}
       onClick={onClick}
     >
-      <use xlinkHref={`img/sprite.svg#${iconId}`} />
+      <use xlinkHref={`${process.env.PUBLIC_URL}/img/sprite.svg#${iconId}`} />
     </svg>
   );
 };

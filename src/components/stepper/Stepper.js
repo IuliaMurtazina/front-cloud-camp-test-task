@@ -1,15 +1,15 @@
 import React from "react";
 import classes from "./Stepper.module.scss";
 
-const Stepper = ({ stepId, steps }) => {
+const Stepper = ({ currentStep, steps }) => {
 
   const renderSteps = () => {
     const totalSteps = [];
     for (let i = 1; i <= steps; i++) {
       const stepClassName =
-        i < stepId
+        i < currentStep
           ? classes.passed
-          : i === stepId
+          : i === currentStep
           ? classes.active
           : "";
       totalSteps.push(
@@ -20,7 +20,7 @@ const Stepper = ({ stepId, steps }) => {
   };
 
   const renderProgressBar = () => {
-    const progressWidth = ((stepId - 1) / (steps - 1)) * 100;
+    const progressWidth = ((currentStep - 1) / (steps - 1)) * 100;
     
     return (
       <div

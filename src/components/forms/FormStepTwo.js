@@ -13,10 +13,11 @@ import useSubmitForm from "../../hooks/useSubmitForm";
 import { useSelector } from "react-redux";
 
 const FormStepTwo = () => {
-  const submitFormHandler = useSubmitForm("/create/step/3");
+  const submitFormHandler = useSubmitForm();
   const { advatages, checkbox, radio } = useSelector(
     (state) => state.user.userInfo,
   );
+  const { currentStep } = useSelector((state) => state.ui);
 
   const initialValues = {
     advatages: advatages ? advatages : ["", "", ""],
@@ -51,7 +52,7 @@ const FormStepTwo = () => {
       validateOnMount={true}
       initialValues={initialValues}
       validationSchema={YupFormStepTwoValidation}
-      onSubmit={(values) => submitFormHandler(values)}
+      onSubmit={(values) => submitFormHandler(values, currentStep + 1)}
     >
       {(formikProps) => {
         return (

@@ -1,7 +1,8 @@
 import { all, spawn, call } from "redux-saga/effects";
+import userInfoWatcher from "./user";
 
 export default function* rootSaga() {
-  const sagas = [];
+  const sagas = [userInfoWatcher];
 
   yield all(
     sagas.map((saga) =>

@@ -43,6 +43,7 @@
     background-color: $color-primary;
     background-image: url('../../../../../public/img/check.svg');
     background-position: 50%;
+    border: 2px solid $color-primary;
   }
 
   input:checked+label[data-type='radio']::before {

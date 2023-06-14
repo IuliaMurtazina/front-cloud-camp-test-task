@@ -1,31 +1,13 @@
 import React from "react";
-import Button from "../../ui/Button";
 import classes from "./ButtonsActions.module.scss";
-import { useNavigate, useParams } from "react-router-dom";
+import ButtonBack from "./buttons/ButtonBack";
+import ButtonNext from "./buttons/ButtonNext";
 
-const ButtonsActions = ({ buttonAction, buttonText }) => {
-  const navigate = useNavigate();
-
+const ButtonsActions = ({ children }) => {
   return (
     <div className={classes.actions}>
-      <Button
-        dataAction={true}
-        variant="outlined"
-        type="button"
-        onClick={() => {
-          navigate(-1);
-        }}
-      >
-        Назад
-      </Button>
-      <Button
-        variant="contained"
-        type="submit"
-        onClick={buttonAction}
-        dataAction={true}
-      >
-        {buttonText}
-      </Button>
+      <ButtonBack />
+      {children ? children : <ButtonNext />}
     </div>
   );
 };

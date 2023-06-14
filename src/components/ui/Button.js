@@ -10,6 +10,7 @@ const Button = ({
   className,
   id,
   dataAction,
+  disabled,
 }) => {
   return (
     <button
@@ -21,6 +22,7 @@ const Button = ({
       onClick={onClick}
       data-action={dataAction}
       id={id}
+      disabled={disabled}
     >
       {children}
     </button>
