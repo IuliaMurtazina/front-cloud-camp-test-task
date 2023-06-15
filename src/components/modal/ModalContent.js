@@ -15,7 +15,7 @@ const ModalContent = () => {
     if (status === sendUserInfoStatus.SUCCESS) return <ButtonGoToMain />;
     if (status === sendUserInfoStatus.ERROR)
       return (
-        <Button variant="contained" onClick={() => dispatch(SET_MODAL_CLOSE())}>
+        <Button variant="contained" id='button-close' onClick={() => dispatch(SET_MODAL_CLOSE())}>
           Закрыть
         </Button>
       );
