@@ -41,8 +41,9 @@ const MultipleInputs = ({ id, label, type, fields, placeholder }) => {
                 type="button"
                 variant="outlined"
                 view="square"
+                id="button-add"
                 className={classes["btn-add"]}
-                onClick={() => push('')}
+                onClick={() => push("")}
               >
                 <IconSmall iconId="plus" className={classes.add} />
               </Button>

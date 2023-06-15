@@ -33,8 +33,12 @@ const uiSlice = createSlice({
     SET_MODAL_CLOSE: (state) => {
       state.isModalOpen = false;
     },
+    CLEAR_UI_STATE: () => {
+      return initialState;
+    },
   },
 });
 
-export const { SET_STEP, SET_MODAL_OPEN, SET_MODAL_CLOSE } = uiSlice.actions;
+export const { SET_STEP, SET_MODAL_OPEN, SET_MODAL_CLOSE, CLEAR_UI_STATE } =
+  uiSlice.actions;
 export default uiSlice.reducer;

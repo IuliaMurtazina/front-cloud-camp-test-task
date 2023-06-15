@@ -8,6 +8,10 @@
     &[data-action=true] {
       align-self: flex-start;
       margin-top: $gap;
+
+      @media screen and (max-width: $phone) {
+        align-self: stretch;
+      }
     }
   }
 }

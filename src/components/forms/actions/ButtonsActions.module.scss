@@ -3,4 +3,8 @@
 .actions {
   @include flex-center;
   justify-content: space-between;
+
+  @media screen and (max-width: $phone) {
+    flex-direction: column;
+  }
 }

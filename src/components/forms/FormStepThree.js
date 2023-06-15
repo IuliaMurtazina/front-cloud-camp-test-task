@@ -11,6 +11,7 @@ import InputGroup from "./input-group/InputGroup";
 import { useDispatch, useSelector } from "react-redux";
 import { sendUserInfo, sendUserInfoStatus } from "../../store/reducers/user";
 import Modal from "../modal/Modal";
+import Button from "../ui/Button";
 
 const FormStepThree = () => {
   const submitFormHandler = useSubmitForm();
@@ -44,7 +45,16 @@ const FormStepThree = () => {
                 placeholder="About"
                 maxLength={FIELD_ABOUT_MAX_LENGTH}
               />
-              <ButtonsActions buttonText="Отправить" />
+              <ButtonsActions>
+                <Button
+                  variant="contained"
+                  type="submit"
+                  dataAction={true}
+                  id="button-send"
+                >
+                  Отправить
+                </Button>
+              </ButtonsActions>
             </Form>
           );
         }}

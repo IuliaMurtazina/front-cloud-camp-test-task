@@ -73,7 +73,7 @@ const FormStepOne = () => {
             {formFields.map((field) => (
               <InputGroup key={field.id} {...field} />
             ))}
-            <ButtonsActions buttonText="Далее" />
+            <ButtonsActions />
           </Form>
         );
       }}

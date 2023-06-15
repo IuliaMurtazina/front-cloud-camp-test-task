@@ -6,8 +6,8 @@ export const FIELD_SERNAME = "sername";
 export const FIELD_SEX = "sex";
 
 export const FIELD_SEX_OPTIONS = [
-  { option: "man", id: "field-sex-man" },
-  { option: "woman", id: "field-sex-woman" },
+  { option: "man", id: "field-sex-option-man" },
+  { option: "woman", id: "field-sex-option-woman" },
 ];
 
 const nicknameRegex = /^[a-zA-Zа-яА-Я0-9]+$/;

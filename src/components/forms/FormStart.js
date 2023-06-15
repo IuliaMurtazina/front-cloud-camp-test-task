@@ -8,7 +8,7 @@ import YupFormStartValidation, {
 import InputGroup from "./input-group/InputGroup";
 import { useSelector } from "react-redux";
 import useSubmitForm from "../../hooks/useSubmitForm";
-import ButtonStart from "./actions/buttons/ButtonStart";
+import Button from "../ui/Button";
 
 const FormStart = () => {
   const submitFormHandler = useSubmitForm("/create");
@@ -51,7 +51,14 @@ const FormStart = () => {
               {formFields.map((field) => (
                 <InputGroup key={field.id} {...field} />
               ))}
-              <ButtonStart />
+              <Button
+                variant="contained"
+                type="submit"
+                dataAction={true}
+                id="button-start"
+              >
+                Начать
+              </Button>
             </Form>
           );
         }}

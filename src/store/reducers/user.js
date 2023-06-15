@@ -17,7 +17,6 @@ export const sendUserInfoStatus = {
 const initialState = {
   userInfo: {},
   status: "",
-  responce: "",
 };
 
 const userSlice = createSlice({
