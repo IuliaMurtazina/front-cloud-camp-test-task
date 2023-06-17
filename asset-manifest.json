@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/front-cloud-camp-test-task/static/css/main.cef46534.css",
-    "main.js": "/front-cloud-camp-test-task/static/js/main.58a48411.js",
+    "main.css": "/front-cloud-camp-test-task/static/css/main.c5a9e0b9.css",
+    "main.js": "/front-cloud-camp-test-task/static/js/main.eb64084a.js",
     "static/media/SB Sans Interface.woff": "/front-cloud-camp-test-task/static/media/SB Sans Interface.5d5bc6c6fac844cbcf12.woff",
     "static/media/SB Sans Interface.woff2": "/front-cloud-camp-test-task/static/media/SB Sans Interface.e077dbf19683a46d9c45.woff2",
     "index.html": "/front-cloud-camp-test-task/index.html",
     "static/media/check.svg": "/front-cloud-camp-test-task/static/media/check.32b20f3bdfd58d3aa577.svg",
-    "main.cef46534.css.map": "/front-cloud-camp-test-task/static/css/main.cef46534.css.map",
-    "main.58a48411.js.map": "/front-cloud-camp-test-task/static/js/main.58a48411.js.map"
+    "main.c5a9e0b9.css.map": "/front-cloud-camp-test-task/static/css/main.c5a9e0b9.css.map",
+    "main.eb64084a.js.map": "/front-cloud-camp-test-task/static/js/main.eb64084a.js.map"
   },
   "entrypoints": [
-    "static/css/main.cef46534.css",
-    "static/js/main.58a48411.js"
+    "static/css/main.c5a9e0b9.css",
+    "static/js/main.eb64084a.js"
   ]
 }
