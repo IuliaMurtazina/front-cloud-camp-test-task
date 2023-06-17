@@ -5,7 +5,8 @@ import Input from "./inputs/Input";
 import Label from "./label/Label";
 
 const InputGroup = (props) => {
-  const { label, type, id, name, inputAction, width } = props;
+  const { label, id, name, inputAction, width } = props;
+
   return (
     <div
       className={`${classes["input-group"]} 
@@ -14,7 +15,7 @@ const InputGroup = (props) => {
       {label && <Label id={id}>{label}</Label>}
 
       <div className={classes["input-container"]}>
-        <Input type={type} {...props} />
+        <Input {...props} />
         {inputAction}
       </div>
 

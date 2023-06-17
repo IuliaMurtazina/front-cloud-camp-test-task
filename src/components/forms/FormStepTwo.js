@@ -1,16 +1,17 @@
 import React from "react";
 import { Form, Formik } from "formik";
-import YupFormStepTwoValidation, {
+import YupFormStepTwoValidationSchema, {
   FIELDS_ADVANTAGES,
   FIELDS_CHECKBOX,
   FIELDS_RADIO,
-} from "./validation/YupFormStepTwoValidation";
+} from "./validation/YupFormStepTwoValidationSchema";
 import ButtonsActions from "./actions/ButtonsActions";
 import classes from "./Form.module.scss";
 import MultipleInputs from "./input-group/groups/MultipleInputs";
 import SelectionGroup from "./input-group/groups/SelectionGroup";
 import useSubmitForm from "../../hooks/useSubmitForm";
 import { useSelector } from "react-redux";
+import { getInitialValues } from "./validation/functions";
 
 const FormStepTwo = () => {
   const submitFormHandler = useSubmitForm();
@@ -18,12 +19,6 @@ const FormStepTwo = () => {
     (state) => state.user.userInfo,
   );
   const { currentStep } = useSelector((state) => state.ui);
-
-  const initialValues = {
-    advatages: advatages ? advatages : ["", "", ""],
-    checkbox: checkbox ? checkbox : [],
-    radio: radio ? radio : "",
-  };
 
   const advantagesFieldsProps = {
     type: "text",
@@ -50,8 +45,12 @@ const FormStepTwo = () => {
   return (
     <Formik
       validateOnMount={true}
-      initialValues={initialValues}
-      validationSchema={YupFormStepTwoValidation}
+      initialValues={getInitialValues(YupFormStepTwoValidationSchema, {
+        advatages,
+        checkbox,
+        radio,
+      })}
+      validationSchema={YupFormStepTwoValidationSchema}
       onSubmit={(values) => submitFormHandler(values, currentStep + 1)}
     >
       {(formikProps) => {

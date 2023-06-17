@@ -2,16 +2,17 @@ import React from "react";
 import { Formik, Form } from "formik";
 import InputGroup from "./input-group/InputGroup";
 import classes from "./Form.module.scss";
-import YupFormStepOneValidation, {
+import YupFormStepOneValidationSchema, {
   FIELD_NAME,
   FIELD_NICKNAME,
   FIELD_SEX,
   FIELD_SEX_OPTIONS,
   FIELD_SERNAME,
-} from "./validation/YupFormStepOneValidation";
+} from "./validation/YupFormStepOneValidationSchema";
 import ButtonsActions from "./actions/ButtonsActions";
 import { useSelector } from "react-redux";
 import useSubmitForm from "../../hooks/useSubmitForm";
+import { getInitialValues } from "./validation/functions";
 
 const FormStepOne = () => {
   const { nickname, name, sername, sex } = useSelector(
@@ -20,13 +21,6 @@ const FormStepOne = () => {
 
   const { currentStep } = useSelector((state) => state.ui);
   const submitFormHandler = useSubmitForm();
-
-  const initialValues = {
-    nickname: nickname ? nickname : "",
-    name: name ? name : "",
-    sername: sername ? sername : "",
-    sex: sex ? sex : "",
-  };
 
   const formFields = [
     {
@@ -63,8 +57,13 @@ const FormStepOne = () => {
   return (
     <Formik
       validateOnMount={true}
-      initialValues={initialValues}
-      validationSchema={YupFormStepOneValidation}
+      initialValues={getInitialValues(YupFormStepOneValidationSchema, {
+        nickname,
+        name,
+        sername,
+        sex,
+      })}
+      validationSchema={YupFormStepOneValidationSchema}
       onSubmit={(values) => submitFormHandler(values, currentStep + 1)}
     >
       {(formikProps) => {

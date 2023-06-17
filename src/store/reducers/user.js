@@ -15,7 +15,18 @@ export const sendUserInfoStatus = {
 };
 
 const initialState = {
-  userInfo: {},
+  userInfo: {
+    phone: "",
+    email: "",
+    nickname: "",
+    name: "",
+    sername: "",
+    sex: '',
+    advatages: ['', '', ''],
+    checkbox: [],
+    radio: "",
+    about: "",
+  },
   status: "",
 };
 

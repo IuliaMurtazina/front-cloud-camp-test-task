@@ -2,23 +2,24 @@ import React from "react";
 import { Formik, Form } from "formik";
 import ButtonsActions from "./actions/ButtonsActions";
 import classes from "./Form.module.scss";
-import YupFormStepThreeValidation, {
+import YupFormStepThreeValidationSchema, {
   FIELD_ABOUT,
   FIELD_ABOUT_MAX_LENGTH,
-} from "./validation/YupFormStepThreeValidation";
+} from "./validation/YupFormStepThreeValidationSchema";
 import useSubmitForm from "../../hooks/useSubmitForm";
 import InputGroup from "./input-group/InputGroup";
 import { useDispatch, useSelector } from "react-redux";
-import { sendUserInfo, sendUserInfoStatus } from "../../store/reducers/user";
+import { sendUserInfo } from "../../store/reducers/user";
 import Modal from "../modal/Modal";
 import Button from "../ui/Button";
+import { getInitialValues } from "./validation/functions";
 
 const FormStepThree = () => {
   const submitFormHandler = useSubmitForm();
   const dispatch = useDispatch();
 
   const { isModalOpen } = useSelector((state) => state.ui);
-  const initialValues = { about: "" };
+  const { about } = useSelector((state) => state.user.userInfo);
 
   const submitForm = (values) => {
     submitFormHandler(values);
@@ -29,8 +30,8 @@ const FormStepThree = () => {
     <>
       <Formik
         validateOnMount={true}
-        initialValues={initialValues}
-        validationSchema={YupFormStepThreeValidation}
+        initialValues={getInitialValues(YupFormStepThreeValidationSchema, { about })}
+        validationSchema={YupFormStepThreeValidationSchema}
         onSubmit={(values) => submitForm(values)}
       >
         {(formikProps) => {

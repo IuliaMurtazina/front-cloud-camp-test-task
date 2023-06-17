@@ -17,7 +17,7 @@ function* sendUserInfoWorker() {
     const userInfo = yield select(selectUserInfo);
     const { data } = yield call(() =>
       axios.post(
-        `https://api.sbercloud.ru/content/v1/bootcamp/frofdgrsfntend`,
+        `https://api.sbercloud.ru/content/v1/bootcamp/frontend`,
         userInfo,
       ),
     );

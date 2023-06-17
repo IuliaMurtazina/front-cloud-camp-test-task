@@ -13,7 +13,6 @@ export const loadUsersStatus = {
 };
 
 const initialState = {
-  countOfSteps: 3,
   currentStep: 1,
   isModalOpen: false,
   modalMessage: "",

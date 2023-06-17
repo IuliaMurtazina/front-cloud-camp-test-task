@@ -23,7 +23,7 @@
       content: '';
       width: 1.6rem;
       height: 1.6rem;
-      border: 2px solid $black-alpha-24;
+      border: 2px solid $color-icon-grey;
       left: -2.8rem;
       top: 50%;
       transform: translateY(-50%);
@@ -40,14 +40,12 @@
   }
 
   input:checked+label[data-type='checkbox']::before {
-    background-color: $color-primary;
+    background-color: $color-icon-grey;
     background-image: url('../../../../../public/img/check.svg');
     background-position: 50%;
-    border: 2px solid $color-primary;
   }
 
   input:checked+label[data-type='radio']::before {
-    border: 2px solid $color-primary;
-    background: radial-gradient(circle, $color-primary 50%, rgb(255, 255, 255) 60%);
+    background: radial-gradient(circle, $color-icon-grey 40%, rgb(255, 255, 255) 50%);
   }
 }
