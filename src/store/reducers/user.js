@@ -16,13 +16,13 @@ export const sendUserInfoStatus = {
 
 const initialState = {
   userInfo: {
-    phone: "",
-    email: "",
+    phone: "+7 (966) 100-98-64",
+    email: "iulia.murtazina@gmail.com",
     nickname: "",
     name: "",
     sername: "",
-    sex: '',
-    advatages: ['', '', ''],
+    sex: "",
+    advatages: ["", "", ""],
     checkbox: [],
     radio: "",
     about: "",

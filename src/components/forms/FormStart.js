@@ -45,6 +45,7 @@ const FormStart = () => {
         onSubmit={(values) => submitFormHandler(values, 1)}
       >
         {(formikProps) => {
+          console.log(formikProps.values);
           return (
             <Form className={`${classes.form} ${classes["form-start"]}`}>
               {formFields.map((field) => (
