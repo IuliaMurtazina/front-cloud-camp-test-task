@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter } from "react-router-dom";
 import RootLayout from "./pages/Root";
 import { Provider } from "react-redux";
 import store from "./store";
@@ -8,7 +8,7 @@ import Create from "./pages/Create";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {
       path: "/",
       element: <RootLayout />,
